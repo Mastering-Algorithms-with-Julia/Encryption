@@ -2,4 +2,14 @@
 ** DES 算法
 不知道为什么，抄书上的代码老有数组越界错误，所以我换了个代码
 https://rosettacode.org/wiki/Data_Encryption_Standard#Julia
-需要注意的是， =key= 的长度必须要大于 8，否则内部出现数组越界错误
+需要注意的是， =key= 的长度必须要大于等于 8，否则内部出现数组越界错误
+
+*** Usage
+#+begin_src julia
+  key = "hello world"
+  message = "fuck you"
+  encipher = desencipher(key, message)
+  @show encipher
+  @show desdecipher(key, encipher)
+
+#+end_src

@@ -175,6 +175,15 @@ function des(key, message, isdecode)
   return result
 end
 
-desencipher(key::Vector{UInt8}, message::Vector{UInt8}) = des(key, message, false)
-desdecipher(key::Vector{UInt8}, message::Vector{UInt8}) = des(key, message, true)
+# desencipher(key::Vector{UInt8}, message::Vector{UInt8}) = des(key, message, false)
+# desdecipher(key::Vector{UInt8}, message::Vector{UInt8}) = des(key, message, true)
 
+desencipher(key::AbstractString, message::AbstractString) = begin
+  @assert length(key) >= 8 "key length must greater than 8"
+  return String(des(Vector{UInt8}(key), Vector{UInt8}(message), false))
+end
+
+desdecipher(key::AbstractString, message::AbstractString) = begin
+  @assert length(key) >= 8 "key length must greater than 8"
+  return String(des(Vector{UInt8}(key), Vector{UInt8}(message), true))
+end
