@@ -141,10 +141,10 @@ function processblock(messageblock::Vector{UInt8}, subkeys)
     left, right = right, left .⊻ f(right, subkeys[n])
   end
   e, result = vcat(right, left), UInt8[]
-  for i in 0:8:63
+  for index in 0:8:63
     byte = 0
     for bit in 1:8
-      byte = byte * 2 + e[DesFinal[i + bit]]
+      byte = byte * 2 + e[DesFinal[index + bit]]
     end
     push!(result, byte)
   end
