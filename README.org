@@ -1,3 +1,5 @@
 * 数据加密
 ** DES 算法
-我真是日了狗了，不知道哪里出错，数组越界访问了，待会再修
+不知道为什么，抄书上的代码老有数组越界错误，所以我换了个代码
+https://rosettacode.org/wiki/Data_Encryption_Standard#Julia
+需要注意的是， =key= 的长度必须要大于 8，否则内部出现数组越界错误

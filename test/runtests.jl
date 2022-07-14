@@ -7,5 +7,9 @@ using Encryption, Test
   key = Vector{UInt8}(1:64)
   message = Vector{UInt8}(rand(1:100, 64))
 
-  @show desencipher(message, key)
+  @show desencipher(key, message)
+
+  key = Vector{UInt8}(1:8)
+  message = Vector{UInt8}(rand(1:100, 7))
+  @show desencipher(key, message)
 end
