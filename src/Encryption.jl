@@ -1,5 +1,8 @@
 module Encryption
 
-greet() = print("Hello World!")
+include("bit.jl")
+include("des.jl")
+
+export desencipher, desdecipher
 
 end # module
