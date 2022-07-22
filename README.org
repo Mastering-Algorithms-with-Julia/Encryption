@@ -19,13 +19,13 @@ https://rosettacode.org/wiki/Data_Encryption_Standard#Julia
 不过代码倒是挺简单
 #+begin_src julia
   struct RSAPubKey
-    e::Int
-    n::Int
+    e::Int64
+    n::Int64
   end
 
   struct RSAPriKey
-    d::Int
-    n::Int
+    d::Int64
+    n::Int64
   end
 
   function modexp(a::Int, b::Int, n::Int)

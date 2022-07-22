@@ -1,11 +1,11 @@
 struct RSAPubKey
-  e::Int
-  n::Int
+  e::Int64
+  n::Int64
 end
 
 struct RSAPriKey
-  d::Int
-  n::Int
+  d::Int64
+  n::Int64
 end
 
 function modexp(a::Int, b::Int, n::Int)
